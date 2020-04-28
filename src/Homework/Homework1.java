@@ -1,5 +1,7 @@
 package Homework;
 
+import java.text.DecimalFormat;
+
 public class Homework1 {
 
     public static void main (String[] args) {
@@ -26,6 +28,9 @@ public class Homework1 {
 
 
         //Part 1
+        String pattern1 = "###,###,###,###";
+        DecimalFormat df1 = new DecimalFormat(pattern1);
+
         System.out.println("********Part1********");
         System.out.println("");
 
@@ -44,7 +49,8 @@ public class Homework1 {
 
         //population in a country
         int countryPop = 328000000;
-        System.out.println("The population in America is " + countryPop + " million");
+        String format = df1.format(countryPop);
+        System.out.println("The population in America is " + format + " million");
 
         //interest rate
         double intRate = 12.99;
@@ -72,6 +78,10 @@ public class Homework1 {
 
 
          //Part 2
+         // Creates a pattern limiting decimal spaces used. Will only show 2 digits after decimal point
+        String pattern2 = ".00";
+        DecimalFormat df = new DecimalFormat(pattern2);
+
         System.out.println("");
         System.out.println("********Part2********");
         System.out.println("");
@@ -87,11 +97,15 @@ public class Homework1 {
 
         //Kelvin to Fahrenheit	° F = 9/5 (K - 273) + 32
         double kelvinToFahrenheit = (9.0/5)*(kelvin - 273)+32;
-        System.out.println("1000° Kelvin converted to Fahrenheit:"+ "°"+ kelvinToFahrenheit);
+        //kelvinToFahrenheitString formatted using DecimalFormat class (df) then stored as a string
+        String dfkelvinToFahrenheit = df.format(kelvinToFahrenheit);
+        System.out.println("1000° Kelvin converted to Fahrenheit:"+ "°"+ dfkelvinToFahrenheit);
 
         //Fahrenheit to Celsius	° C = 5/9 (° F - 32)
         double fahrenheitToCelsius = 5.0/9*(fahrenheit-32);
-        System.out.println("65° Fahrenheit converted to Celsius:"+ "°"+ fahrenheitToCelsius);
+        //fahrenheitToCelsius formatted using DecimalFormat class (df) then stored as a string
+        String dffahrenheitToCelsius = df.format(fahrenheitToCelsius);
+        System.out.println("65° Fahrenheit converted to Celsius:"+ "°"+ dffahrenheitToCelsius);
 
         //Celsius to Kelvin	K = ° C + 273
         int celsiusToKelvin = celsius + 273;
@@ -103,7 +117,9 @@ public class Homework1 {
 
         //Fahrenheit to Kelvin	K = 5/9 (° F - 32) + 273
         double fahrenheitToKelvin = 5.0/9*(fahrenheit-32)+273;
-        System.out.println("65° Fahrenheit converted to Kelvin:"+ "°"+ fahrenheitToKelvin);
+        //fahrenheitToKelvin formatted using DecimalFormat class (df) then stored as a string
+        String dffahrenheitToKelvin = df.format(fahrenheitToKelvin);
+        System.out.println("65° Fahrenheit converted to Kelvin:"+ "°"+ dffahrenheitToKelvin);
 
 
     }
