@@ -26,6 +26,8 @@ public class Homework1 {
 
 
         //Part 1
+        System.out.println("********Part1********");
+        System.out.println("");
 
 
         //number of hours in a day
@@ -70,6 +72,9 @@ public class Homework1 {
 
 
          //Part 2
+        System.out.println("");
+        System.out.println("********Part2********");
+        System.out.println("");
 
 
         int fahrenheit = 65;
@@ -99,9 +104,6 @@ public class Homework1 {
         //Fahrenheit to Kelvin	K = 5/9 (° F - 32) + 273
         double fahrenheitToKelvin = 5.0/9*(fahrenheit-32)+273;
         System.out.println("65° Fahrenheit converted to Kelvin:"+ "°"+ fahrenheitToKelvin);
-
-
-
 
 
     }
