@@ -27,19 +27,19 @@ public class Homework2 {
         System.out.println("");
 
         //Store your first name in a variable
-        String fNAme = "Mika";
+        String fName = "Mika";
 
         //Display length of the first name.
-        System.out.println("The length of my first name is: " + fNAme.length());
+        System.out.println("The length of my first name is: " + fName.length());
 
         //Does your name starts with "K" (Considering cases)
-        System.out.println("Does " + fNAme + " start with a 'K'? " + fNAme.substring(0,1).equals("K"));
+        System.out.println("Does " + fName + " start with a 'K'? " + fName.substring(0,1).equals("K"));
 
         //First alphabet of your name
-        System.out.println("The first letter in " +fNAme+ " is: " + fNAme.charAt(0));
+        System.out.println("The first letter in " +fName+ " is: " + fName.charAt(0));
 
         //Does your name ends with "M" (Ignoring cases)
-        System.out.println("Does " + fNAme + " start with a 'M'? " + fNAme.substring(3,4).equalsIgnoreCase("M"));
+        System.out.println("Does " + fName + " start with a 'M'? " + fName.substring(3,4).equalsIgnoreCase("M"));
 
         //Part 2
         System.out.println("");
@@ -66,7 +66,7 @@ public class Homework2 {
         System.out.println("******* Part 3 *******");
         System.out.println("");
 
-        String[] nameSplit = fNAme.split("");
+        String[] nameSplit = fName.split("");
         System.out.println("The  length of my name: "+ nameSplit.length);
 
 
