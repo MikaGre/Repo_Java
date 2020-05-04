@@ -33,7 +33,7 @@ public class Homework2 {
         System.out.println("The length of my first name is: " + fName.length());
 
         //Does your name starts with "K" (Considering cases)
-        System.out.println("Does " + fName + " start with a 'K'? " + fName.substring(0,1).equals("K"));
+        System.out.println("Does " + fName + " start with a 'K'? " + fName.startsWith("K");
 
         //First alphabet of your name
         System.out.println("The first letter in " +fName+ " is: " + fName.charAt(0));
@@ -67,8 +67,7 @@ public class Homework2 {
         System.out.println("");
 
         String[] nameSplit = fName.split("");
-        System.out.println("The  length of my name: "+ nameSplit.length);
-
+        System.out.println("The length of my name: "+ nameSplit.length);
 
 
 
