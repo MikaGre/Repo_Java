@@ -33,13 +33,14 @@ public class Homework2 {
         System.out.println("The length of my first name is: " + fName.length());
 
         //Does your name starts with "K" (Considering cases)
-        System.out.println("Does " + fName + " start with a 'K'? " + fName.startsWith("K");
+        System.out.println("Does " + fName + " start with a 'K'? " + fName.startsWith("K"));
 
         //First alphabet of your name
         System.out.println("The first letter in " +fName+ " is: " + fName.charAt(0));
 
         //Does your name ends with "M" (Ignoring cases)
-        System.out.println("Does " + fName + " start with a 'M'? " + fName.substring(3,4).equalsIgnoreCase("M"));
+        fName.toUpperCase();
+        System.out.println("Does " + fName + " start with a 'M'? " + fName.endsWith("M");
 
         //Part 2
         System.out.println("");
