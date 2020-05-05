@@ -73,7 +73,9 @@ public class Homework3 {
         char carMode = 'd';
         char c = Character.toUpperCase(carMode);
 
-        String driveType = "snow";
+        String driveType = "SNOW";
+        String s = driveType.toLowerCase();
+
         String display = "";
 
         switch (c) {
@@ -82,7 +84,7 @@ public class Homework3 {
                 break;
 
             case 'D':
-                switch (driveType) {
+                switch (s) {
                     case "snow":
                         display = "Snow mode";
                         break;
