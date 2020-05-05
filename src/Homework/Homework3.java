@@ -70,7 +70,7 @@ public class Homework3 {
         System.out.println("*******Part2*******");
         System.out.println();
 
-        char carMode = 'd';
+        char carMode = 'z';
         char c = Character.toUpperCase(carMode);
 
         String driveType = "SNOW";
@@ -103,7 +103,7 @@ public class Homework3 {
                 display = "Car in Reverse";
                 break;
             default:
-                display = "Invalid driver mode";
+                display = "This mode is invalid:" + carMode;
         }
         System.out.println(display);
 
