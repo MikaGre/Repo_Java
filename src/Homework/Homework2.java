@@ -40,7 +40,7 @@ public class Homework2 {
 
         //Does your name ends with "M" (Ignoring cases)
         fName.toUpperCase();
-        System.out.println("Does " + fName + " start with a 'M'? " + fName.endsWith("M");
+        System.out.println("Does " + fName + " start with a 'M'? " + fName.endsWith("M"));
 
         //Part 2
         System.out.println("");
