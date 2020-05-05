@@ -37,7 +37,7 @@ public class Homework3 {
  * if not divisible by 3 or 5, print the number
  *
  */
-        String pattern = "0.00%";
+        String pattern = "0.00";
         DecimalFormat df = new DecimalFormat(pattern);
 
 
@@ -45,28 +45,28 @@ public class Homework3 {
         System.out.println();
 
         char letterGrade = ' ';
-        double studentScore = 75;
+        double studentScore = 92;
         double maxScore = 100;
 
         // formula is (x/y)*100. I am using Decimal Format to move the decimal places.
-        double result = (studentScore / maxScore) ;
+        double result = (studentScore / maxScore)*100;
         String dfResult = df.format(result);
 
 
         if (result == 100 || result >= 91) {
             letterGrade = 'A';
-        } else if (result >= 81 || result >= 90) {
+        } else if (result >= 81 && result <= 90) {
             letterGrade = 'B';
-        } else if (result >= 71 || result >= 80) {
+        } else if (result >= 71 && result <= 80) {
             letterGrade = 'C';
-        } else if (result >= 61 || result >= 70) {
+        } else if (result >= 61 && result <= 70) {
             letterGrade = 'D';
-        } else if (result >= 51 || result >= 60) {
+        } else if (result >= 51 && result <= 60) {
             letterGrade = 'E';
         } else if (result < 50) {
             letterGrade = 'F';
         }
-        System.out.println("Grade Percentage:" + dfResult  + "\n" + "Letter Grade:" + letterGrade);
+        System.out.println("Grade Percentage:" + dfResult +"%"+"\n" + "Letter Grade:" + letterGrade);
 
         System.out.println();
         System.out.println("*******Part2*******");
