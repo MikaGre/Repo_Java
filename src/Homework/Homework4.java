@@ -1,5 +1,9 @@
 package Homework;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa2784eeef03e6bbf20d1909ff05416a63fa4d27
 public class Homework4 {
 
     public static void main (String[] args) {
