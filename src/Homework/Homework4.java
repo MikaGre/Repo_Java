@@ -35,7 +35,7 @@ public class Homework4 {
 
 
         String line = "once upOn a tiMe in the UNIVERSE"; //Once Upon A Time In The Universe
-        System.out.println("Line (Before modification): " + line.length());
+        System.out.println("Line (Before modification): " + line);
 
         String[] lines = line.toLowerCase().split(" ");
         line = "";
@@ -44,7 +44,7 @@ public class Homework4 {
             line += w.toUpperCase().substring(0,1) + w.substring(1) + " ";
         }
 
-        System.out.println("Line (After modification):" +line.length());
+        System.out.println("Line (After modification):" + line.trim());
 
 
         System.out.println("\n"+"***Part3***"+"\n");
