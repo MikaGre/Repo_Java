@@ -17,8 +17,7 @@ public class Homework4 {
          * sout("Abbreviation : " + abr);
          */
 
-        System.out.println("*******Part1*******");
-        System.out.println();
+        System.out.println("\n"+"***Part1***"+"\n");
 
         String msg = "main interface keyword array";
         String abr = "";
@@ -34,9 +33,7 @@ public class Homework4 {
         /**
          * Make 1st Char of each word Capital
          */
-        System.out.println();
-        System.out.println("*******Part2*******");
-        System.out.println();
+        System.out.println("\n"+"***Part2***"+"\n");
 
 
         String line = "once upOn a tiMe in the UNIVERSE"; //Once Upon A Time In The Universe
@@ -53,9 +50,7 @@ public class Homework4 {
         System.out.println("Line (After modification): " + line);
 
 
-        System.out.println();
-        System.out.println("*******Part3*******");
-        System.out.println();
+        System.out.println("\n"+"***Part3***"+"\n");
 
         /**
          * reverse a string
@@ -82,10 +77,7 @@ public class Homework4 {
 
         System.out.println("Message in reverse: " + reverseMessage);
 
-
-        System.out.println();
-        System.out.println("*******Part4*******");
-        System.out.println();
+        System.out.println("\n"+"***Part4***"+"\n");
 
         /**
          * Check if word is palindrome
