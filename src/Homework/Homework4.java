@@ -1,7 +1,5 @@
 package Homework;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class Homework4 {
 
     public static void main (String[] args) {
@@ -56,22 +54,14 @@ public class Homework4 {
          */
 
 
-        String message = "RaDaR";
+        String message = "pizza";
         String reverseMessage = "";
 
-        char[] letterBox = new char[message.length()];
-
-        int j = 0;
-
+        char[] letterBox = message.toCharArray();
         System.out.println("Message: " + message);
 
-        for (int i = message.length()-1; i >= 0; i--) {
-            letterBox[j] = message.charAt(i);
-            j++;
-        }
-
-        for (char c : letterBox) {
-            reverseMessage = reverseMessage + c;
+        for (int i = message.length() -1; i >= 0; i--) {
+            reverseMessage += message.charAt(i);
         }
 
         System.out.println("Message in reverse: " + reverseMessage);
