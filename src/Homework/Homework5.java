@@ -20,6 +20,9 @@ package Homework;
  *
  * Maximum value in the given array: 189
  */
+
+import java.util.Arrays;
+
 /**
  * Create a method that will tell the name of student with maximum marks/score.
  * int[] scores = {90, 89, 191, 100, 81};
@@ -29,83 +32,86 @@ package Homework;
  */
 
 public class Homework5 {
+   static String nameNotFound = "";
+   static int studentIndex = 0;
+   static int largestnum = 0;
+   static String topStudent = "";
+
 
     public static void main (String[] args) {
 
         String[] names1 = {"john", "michael", "dora", "philip", "ilena", "palena", "fahry"};
-        nameToSearch(names1, "michael");
+        int findNamePos = nameToSearch(names1, "dora");
+
+        if (findNamePos > 0){
+            System.out.println(names1[findNamePos -1] + " is on position-" + findNamePos);
+        }else{
+            System.out.println(nameNotFound +" is not present in the array.");
+        }
 
         int[] numbers1 = {45, 22, 11};
-        average(numbers1);
-
-        int[] numbers2 = {45, 201, 11, 65, 189, 462, 100, 200};
-        maximum(numbers2);
+        int averageOfNumbers = average(numbers1);
+        System.out.println("Average of the given array: " + averageOfNumbers);
 
         int[] scores = {10, 89, 191, 100, 281};
+        int maxVal = maximum(scores);
+        System.out.println("Maximum value in the given array: " + maxVal);
+
         String[] names2 = {"Happy", "Peace", "Jesse", "Kaitlin", "Lucky"};
-        maximum(scores,names2);
+        String highestScoreinArr = studentScores(scores, names2);
+        System.out.println(topStudent + " scored the maximum score " + "("+largestnum+")");
+
 
     }
 
     public static int nameToSearch (String[] names, String lookingfor) {
-        int pos = -1;
+       int pos = -1;
         for (int i = 0; i < names.length; i++) {
             if (names[i].equalsIgnoreCase(lookingfor)) {
                 pos = (i + 1);
                 break;
+            }else{
+                nameNotFound = names[i];
             }
         }
-        if (pos > 0){
-            System.out.println(lookingfor + "is on position-" + pos);
-        }else{
-            System.out.println(lookingfor + " is not present in the array.");
-        }
-        return pos;
+  return pos;
     }
 
 
 
-    public static int average (int[] avg){
+    public static int average (int[] arr){
         int total = 0;
-        int a = 0;
-        for (int num : avg) {
+        int averageofarr = 0;
+        for (int num : arr) {
             total+=num;
         }
-        a = total/avg.length;
-        System.out.println("Average of the given array: " + a);
-        return a;
+        averageofarr = total/arr.length;
+
+        return averageofarr;
     }
 
 
 
 
     public static int maximum (int [] max){
-        int largestnum = 0;
         for (int i = 0; i < max.length; i++) {
                 if (max[i] > largestnum){
                     largestnum = max[i];
+                    studentIndex = i;
                 }
             }
-            System.out.println("Maximum value in the given array: " + largestnum);
             return largestnum;
         }
 
 
 
 
-    public static int maximum (int [] max, String[] students){
-        int largestnum = 0;
-        String topStudent = "";
+    public static String studentScores (int [] max, String[] students){
+        int studentHighScore = maximum(max);
+        topStudent = students[studentIndex];
 
-        for (int i = 0; i < max.length; i++) {
-            if (max[i] > largestnum){
-                largestnum = max[i];
-                topStudent = students[i];
-            }
-        }
-        System.out.println(topStudent + " scored the maximum score " + "("+largestnum+")");
-        return largestnum;
+        return topStudent;
     }
 
-    }
+}
 
