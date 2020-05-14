@@ -41,7 +41,7 @@ public class Homework5 {
     public static void main (String[] args) {
 
         String[] names1 = {"john", "michael", "dora", "philip", "ilena", "palena", "fahry"};
-        int findNamePos = nameToSearch(names1, "dora");
+        int findNamePos = nameToSearch(names1, "do");
 
         if (findNamePos > 0){
             System.out.println(names1[findNamePos -1] + " is on position-" + findNamePos);
@@ -71,7 +71,7 @@ public class Homework5 {
                 pos = (i + 1);
                 break;
             }else{
-                nameNotFound = names[i];
+                nameNotFound = lookingfor;
             }
         }
   return pos;
