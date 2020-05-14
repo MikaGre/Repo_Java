@@ -34,7 +34,7 @@ import java.util.Arrays;
 public class Homework5 {
    static String nameNotFound = "";
    static int studentIndex = 0;
-   static int largestnum = 0;
+   static int largestnum;
    static String topStudent = "";
 
 
@@ -53,7 +53,7 @@ public class Homework5 {
         int averageOfNumbers = average(numbers1);
         System.out.println("Average of the given array: " + averageOfNumbers);
 
-        int[] scores = {10, 89, 191, 100, 281};
+        int[] scores = {-10, -89, -191, -100, -281};
         int maxVal = maximum(scores);
         System.out.println("Maximum value in the given array: " + maxVal);
 
@@ -94,6 +94,7 @@ public class Homework5 {
 
 
     public static int maximum (int [] max){
+        largestnum = max[0];
         for (int i = 0; i < max.length; i++) {
                 if (max[i] > largestnum){
                     largestnum = max[i];
