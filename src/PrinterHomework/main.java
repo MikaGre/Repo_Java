@@ -12,7 +12,11 @@ public class main {
     public static void main (String[] args) throws InterruptedException {
 
         do {
-            mainMenu();
+            System.out.println("Hello! Please choose an option:" +
+                    "\n" + "|(A)Printer Resources| |(B)Add Toner| " +
+                    "|(C)Add Paper| \n|(P)Print| |(S)Scanner-Copier| |(F)Fax| |(Q)Quit|");
+                     userSelect = scanner.next().toLowerCase();
+
             if (userSelect.length() > 0) {
                 switch (userSelect) {
                     case "a":
@@ -23,23 +27,23 @@ public class main {
                             System.out.println("Must add resources");
                             break;
                         }
-                        String userInputSingleOrDouble = "";
-
                         System.out.print("Page(s):");
                         int userInputPage = scanner.nextInt();
 
                         if (userInputPage <=0) {
-                            System.out.println("Error");
+                            System.out.println("Please enter a number greater than 0");
                         }else{
                             System.out.print("Single or Double(S/D):");
-                            userInputSingleOrDouble = scanner.next();
+                            String userInputSingleOrDouble = scanner.next();
                             switch (userInputSingleOrDouble){
                                 case "s":
                                 case "d":
                                     Printer.print(userInputPage,userInputSingleOrDouble);
+                                    System.out.println("Printing....");
+                                    System.out.println("Printing Complete!");
                                     break;
                                 default:
-                                    System.out.println(userInputSingleOrDouble + " is invalid");
+                                    System.out.println(userInputSingleOrDouble + " is invalid. Please choose Single(S) or Double(D) sided");
                             }
                         }
                         break;
@@ -51,17 +55,19 @@ public class main {
                         System.out.println("How many copies? ");
                         int userInputNumberOfCopies = scanner.nextInt();
                         if (userInputNumberOfCopies <=0) {
-                            System.out.println("Error");
+                            System.out.println("Please enter a number greater than 0");
                         }else {
                             System.out.print("Single or Double(S/D):");
-                            String userInputCopies = scanner.next();
-                            switch (userInputCopies) {
+                            String userInputSingOrDoub = scanner.next();
+                            switch (userInputSingOrDoub) {
                                 case "s":
                                 case "d":
-                                    Printer.scanner(userInputNumberOfCopies, userInputCopies);
+                                    Printer.scanner(userInputNumberOfCopies, userInputSingOrDoub);
+                                    System.out.println("Scanning...");
+                                    System.out.println("Scan Complete!");
                                     break;
                                 default:
-                                    System.out.println("Error");
+                                    System.out.println(userInputSingOrDoub + " is invalid.Please choose Single(S) or Double(D) sided");
                             }
                         }
                         break;
@@ -69,22 +75,32 @@ public class main {
                         Printer.Fax();
                         break;
                     case "b":
-                        System.out.print("Toner Amount:");
-                        int userInputTonerAmount = scanner.nextInt();
-                        if (userInputTonerAmount <=0) {
-                            System.out.println("Error");
+                        if (tonerLevel == 100) {
+                            System.out.println("Toner Full");
+                            break;
                         }else {
-                            Printer.setTonerLevel(userInputTonerAmount);
+                            System.out.print("Toner Amount:");
+                            int userInputTonerAmount = scanner.nextInt();
+                            if (userInputTonerAmount <= 0) {
+                                System.out.println("Please enter a number greater than 0");
+                            } else {
+                                Printer.setTonerLevel(userInputTonerAmount);
+                            }
                         }
                         break;
                     case "c":
-                        System.out.print("Paper Amount:");
-                        int userInputPageAmount = scanner.nextInt();
-                        if (userInputPageAmount <=0) {
-                            System.out.println("Error");
-                        }else{
+                        if (pageLevel == 100) {
+                            System.out.println("Paper Tray Full");
+                            break;
+                        }else {
+                            System.out.print("Paper Amount:");
+                            int userInputPageAmount = scanner.nextInt();
+                            if (userInputPageAmount <= 0) {
+                                System.out.println("Please enter a number greater than 0");
+                            } else {
                                 Printer.setPageLevel(userInputPageAmount);
                             }
+                        }
                         break;
                     case "q":
                         System.out.println("Exiting Program...");
