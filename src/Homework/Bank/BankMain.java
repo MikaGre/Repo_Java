@@ -11,14 +11,13 @@ public class BankMain  {
        // customer1.makeWithdraw(2500);
         customer1.openNewAccount("saving",2000);
         customer1.openNewAccount("saving",2000);
-        customer1.openNewAccount("saving",2000);
-        customer1.openNewAccount("saving",2000);
-        customer1.openNewAccount("saving",2000);
+        //customer1.openNewAccount("saving",2000);
+        //customer1.openNewAccount("saving",2000);
+        //customer1.openNewAccount("saving",2000);
 
         //customer2.makeDeposit(300);
         //customer2.makeWithdraw(100);
-
-        //customer1.getBankStatement();
+        customer1.getBankStatement();
        //customer2.getBankStatement();
 
 //        customer1.setPhoneNumber("124561234");

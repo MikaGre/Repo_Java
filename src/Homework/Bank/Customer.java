@@ -2,7 +2,11 @@ package Homework.Bank;
 import java.util.regex.Pattern;
 
 public class Customer extends Account{
-
+    String firstName;
+    String lastName;
+    String phoneNumber;
+    String ssn;
+    String pinNumber;
 
     public Customer (String firstName, String lastName, String ssn, String pinNumber, String accType, double amount) {
         this.firstName = firstName;
