@@ -7,6 +7,8 @@ public class Customer extends Account{
     String phoneNumber;
     String ssn;
     String pinNumber;
+    String[] customerAccountsType = new String[4];
+    Double[] customerAccountsAmount = new Double[4];
 
     public Customer (String firstName, String lastName, String ssn, String pinNumber, String accType, double amount) {
         this.firstName = firstName;
@@ -98,6 +100,43 @@ public class Customer extends Account{
             System.out.println("\nInvalid amount to withdraw -> " + amount);
         }
         return balance;
+    }
+
+    public void openNewAccount (String accType, double amount) {
+        if (accountAmount != 5) {
+            if (accType.equalsIgnoreCase("Saving") || accType.equalsIgnoreCase("Checking")) {
+                this.accType = accType;
+            } else {
+                System.out.println("Error! We only make Checking and Saving Accounts");
+            }
+
+            if (amount < 1000) {
+                System.out.println("Error! Minimum deposit is $1000");
+            } else {
+                this.balance += amount;
+
+            }
+
+            if (this.amount > 0 && this.accType != null && this.accountAmount <=5) {
+                this.accountAmount++;
+                System.out.println("***** Account created! *****\n");
+            }
+            for (int i = 0; i < customerAccountsAmount.length ; i++) {
+                if (customerAccountsAmount[i] == null){
+                    customerAccountsAmount[i] = amount;
+                    break;
+                }
+            }
+            for (int i = 0; i < customerAccountsType.length ; i++) {
+                if (customerAccountsType[i] == null){
+                    customerAccountsType[i] = accType;
+                    break;
+                }
+            }
+
+        }else{
+            System.out.println("\nSorry, You can no longer make addition account(s)");
+        }
     }
 }
 
