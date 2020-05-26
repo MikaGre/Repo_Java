@@ -1,8 +1,8 @@
-package PrinterHomework;
+package Homework.Printer;
 
 import java.util.Scanner;
 
-import static PrinterHomework.Printer.*;
+import static Homework.Printer.Printer.*;
 
 public class main {
     static Scanner scanner = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package PrinterHomework;
+package Homework.Printer;
 
 public class Printer {
      static int tonerLevel = 100;
@@ -54,9 +54,11 @@ public class Printer {
                 pageLevel -= numberOfPages;
                 break;
             case "d":
-                tonerLevel -= numberOfPages;
+                tonerLevel -= numberOfPages+1;
                 pageLevel -= (numberOfPages / 2.0);
                 break;
+            default:
+                System.out.println("Error! Single or Double (S/D)");
         }
     }
 
