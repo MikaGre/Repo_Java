@@ -12,7 +12,7 @@ public class midtermMain {
         System.out.println("Returned Array: " + Arrays.toString(removeNumber(array, remove)));
 
         System.out.println("\nQuestion2:");
-        int[] array2 = {-1, -3, 4, 2};
+        int[] array2 = {0, 5, -1, 1, 2, 5, 3, 7, 1, 2};
         System.out.println("Array: " + Arrays.toString(array2));
         System.out.println("Smallest missing Integer: " + smallestPositiveInteger(array2));
 
@@ -78,16 +78,25 @@ public class midtermMain {
     public static int smallestPositiveInteger (int [] findSmallestInt) {
         int len = findSmallestInt.length;
 
-        boolean[] isMissing = new boolean[len + 1];
-
         for (int i = 0; i < len; i++) {
-            if (findSmallestInt[i] > 0 && findSmallestInt[i] <= len)
-                isMissing[findSmallestInt[i]] = true;
+            while (findSmallestInt[i] != i + 1) {
+                if (findSmallestInt[i] <= 0 || findSmallestInt[i] >= len)
+                    break;
+
+                if(findSmallestInt[i]==findSmallestInt[findSmallestInt[i]-1])
+                    break;
+
+                int temp = findSmallestInt[i];
+                findSmallestInt[i] = findSmallestInt[temp - 1];
+                findSmallestInt[temp - 1] = temp;
+            }
         }
 
-        for (int i = 1; i <= len; i++)
-            if (!isMissing[i])
-                return i;
+        for (int i = 0; i < len; i++){
+            if (findSmallestInt[i] != i + 1){
+                return i + 1;
+            }
+        }
 
         return len + 1;
     }
