@@ -94,7 +94,7 @@ public static void main (String[] args) {
 }
 
 
-    public static void wordCount(List<String> strings) {
+    public static Map<String,Integer> wordCount(List<String> strings) {
         Map<String,Integer> word_count = new HashMap<>();
 
         for (int i = 0; i < strings.size(); i++) {
@@ -111,6 +111,7 @@ public static void main (String[] args) {
                 System.out.println(word+ " - " + word_count.get(k));
             }
         }
+        return  word_count;
     }
 
     public static void keyWithSameVal (Map<Integer,String> keyValPairs) {
@@ -128,7 +129,7 @@ public static void main (String[] args) {
                 }
             }
         }
-        if (duplicates.size() > 1) {
+        if (duplicates.size() >= 1) {
             System.out.println("Keys with duplicate values:\n");
             duplicates.forEach(System.out::println);
         } else {
